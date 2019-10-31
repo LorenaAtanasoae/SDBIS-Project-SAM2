@@ -1,8 +1,8 @@
 Multi-tiered software development project!
  Team composition:
- Lorena Atănăsoae
- Bogdan Păuleț
- Jean Rîbac
- Ionescu Florin
+ Lorena Atănăsoae,
+ Bogdan Păuleț,
+ Jean Rîbac,
+ Ionescu Florin.
  
- Project theme: SAM2
+ Project theme: SAM2.
