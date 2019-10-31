@@ -57,8 +57,6 @@ public class Feature implements Comparable<Feature>, Serializable
 		this.description = description;
 	}
 
-
-
 	public enum FeatureCategory {
 		BUSINESS, TECHNICAL;
 	}

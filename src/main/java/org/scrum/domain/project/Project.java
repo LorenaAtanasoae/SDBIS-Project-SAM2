@@ -53,7 +53,6 @@ public class Project implements Serializable, Comparable<Project>{
 				+ releases + "]";
 	}
 	
-	/* Constructors */
 	public Project(Integer projectNo, String name, Date startDate) {
 		super();
 		this.projectNo = projectNo;
