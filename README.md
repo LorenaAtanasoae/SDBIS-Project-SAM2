@@ -3,6 +3,6 @@ Multi-tiered software development project!
  Lorena Atănăsoae,
  Bogdan Păuleț,
  Jean Rîbac,
- Ionescu Florin.
+ Ionescu Robert.
  
  Project theme: SAM2.
