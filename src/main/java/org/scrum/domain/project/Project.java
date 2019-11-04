@@ -21,6 +21,7 @@ public class Project implements Serializable, Comparable<Project>{
 	}
 	
 	public String getName() {
+		//Comentariu testttttt
 		return name;
 	}
 	public void setName(String name) {
