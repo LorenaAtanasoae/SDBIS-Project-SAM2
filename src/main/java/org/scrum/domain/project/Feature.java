@@ -1,4 +1,4 @@
-package org.scrum.domain.project;
+package main.java.org.scrum.domain.project;
 
 import java.io.Serializable;
 

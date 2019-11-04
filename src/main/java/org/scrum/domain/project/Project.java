@@ -1,9 +1,11 @@
-package org.scrum.domain.project;
+package main.java.org.scrum.domain.project;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import main.java.org.scrum.domain.project.Release;
 
 public class Project implements Serializable, Comparable<Project>{
 
