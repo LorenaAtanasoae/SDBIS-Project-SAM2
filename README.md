@@ -6,5 +6,3 @@ Multi-tiered software development project!
  Robert Ionescu.
  
  Project theme: SAM2.
-Bla bla 
-Si mai mult bla bla bla
