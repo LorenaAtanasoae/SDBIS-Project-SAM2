@@ -13,7 +13,15 @@ public class Project implements Serializable, Comparable<Project>{
 	private Date startDate;
 	private List<Release> releases = new ArrayList<>();
 	private Release currentRelease;
+	private List<Team> teams = new ArrayList<>();
+	
 
+	public List<Team> getTeams() {
+		return teams;
+	}
+	public void setTeams(List<Team> teams) {
+		this.teams = teams;
+	}
 	public Integer getProjectNo() {
 		return projectNo;
 	}
@@ -65,6 +73,13 @@ public class Project implements Serializable, Comparable<Project>{
 	}
 
 
+	public Project(Integer projectNo, String name, Date startDate, List<Team> teams) {
+		super();
+		this.projectNo = projectNo;
+		this.name = name;
+		this.startDate = startDate;
+		this.teams = teams;
+	}
 	public Project(Integer nrProiect, String numeProiect) {
 		super();
 		this.projectNo = nrProiect;

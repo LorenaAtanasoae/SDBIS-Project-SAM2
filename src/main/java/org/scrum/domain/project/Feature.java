@@ -1,13 +1,16 @@
 package org.scrum.domain.project;
 
+import java.util.List;
 import java.io.Serializable;
+import java.util.ArrayList;
 
-
+//Comment
 public class Feature implements Comparable<Feature>, Serializable
 {
 	protected Integer featureID;
 	private String name;
 	private String description;
+	private List<Task> tasks= new ArrayList<>();
 	
 	protected FeatureCategory category = FeatureCategory.TECHNICAL;
 	
@@ -50,6 +53,18 @@ public class Feature implements Comparable<Feature>, Serializable
 
 	
 	
+	public Feature(String name, String description, List<Task> tasks) {
+		super();
+		this.name = name;
+		this.description = description;
+		this.tasks = tasks;
+	}
+	public List<Task> getTasks() {
+		return tasks;
+	}
+	public void setTasks(List<Task> tasks) {
+		this.tasks = tasks;
+	}
 	public Feature(Integer featureID, String name, String description) {
 		super();
 		this.featureID = featureID;

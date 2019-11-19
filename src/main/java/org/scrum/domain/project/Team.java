@@ -14,6 +14,7 @@ public class Team implements Serializable{
 	private List<Member> members = new ArrayList<Member>();
 	
 	private TeamLeader teamLeader;
+
 	
 	public Team(Integer teamId, Specialization specialization, String abilities) {
 		super();
