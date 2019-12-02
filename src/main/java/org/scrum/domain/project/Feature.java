@@ -94,3 +94,4 @@ public class Feature implements Comparable<Feature>, Serializable
 				+ ", description=" + description + ", category=" + category
 				+ "]";
 	}
+}
