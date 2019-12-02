@@ -1,11 +1,11 @@
-
-package org.scrum.domain.project;
+package main.java.org.scrum.domain.project;
 
 import java.io.Serializable;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import main.java.org.scrum.domain.project.Release;
 
 public class Project implements Serializable, Comparable<Project>{
 
@@ -14,15 +14,7 @@ public class Project implements Serializable, Comparable<Project>{
 	private Date startDate;
 	private List<Release> releases = new ArrayList<>();
 	private Release currentRelease;
-	private List<Team> teams = new ArrayList<>();
-	
-
-	public List<Team> getTeams() {
-		return teams;
-	}
-	public void setTeams(List<Team> teams) {
-		this.teams = teams;
-	}
+	//Commmmmm 
 	public Integer getProjectNo() {
 		return projectNo;
 	}
@@ -31,6 +23,7 @@ public class Project implements Serializable, Comparable<Project>{
 	}
 	
 	public String getName() {
+		//Comentariu testttttt
 		return name;
 	}
 	public void setName(String name) {
@@ -63,6 +56,7 @@ public class Project implements Serializable, Comparable<Project>{
 				+ releases + "]";
 	}
 	
+	/* Constructors */
 	public Project(Integer projectNo, String name, Date startDate) {
 		super();
 		this.projectNo = projectNo;
@@ -72,24 +66,39 @@ public class Project implements Serializable, Comparable<Project>{
 
 	public Project() {
 	}
-
-
-	public Project(Integer projectNo, String name, Date startDate, List<Team> teams) {
-		super();
-		this.projectNo = projectNo;
-		this.name = name;
-		this.startDate = startDate;
-		this.teams = teams;
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((projectNo == null) ? 0 : projectNo.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Project other = (Project) obj;
+		if (projectNo == null) {
+			if (other.projectNo != null)
+				return false;
+		} else if (!projectNo.equals(other.projectNo))
+			return false;
+		return true;
 	}
 	public Project(Integer nrProiect, String numeProiect) {
 		super();
 		this.projectNo = nrProiect;
 		this.name = numeProiect;
 	}
+
 	@Override
-	public int compareTo(Project o) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	public int compareTo(Project obj) {
+		return this.projectNo.compareTo(((Project)obj).getProjectNo());
+	}	
 	
 }
