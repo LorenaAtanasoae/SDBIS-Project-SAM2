@@ -1,3 +1,4 @@
+
 package org.scrum.domain.project;
 
 import java.util.List;
@@ -92,5 +93,4 @@ public class Feature implements Comparable<Feature>, Serializable
 		return "\n\t\tFeature [featureID=" + featureID + ", name=" + name
 				+ ", description=" + description + ", category=" + category
 				+ "]";
-	}	
-}
+	}

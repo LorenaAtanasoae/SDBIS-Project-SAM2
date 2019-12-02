@@ -9,10 +9,11 @@ import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 
 import org.scrum.domain.project.Project;
-import org.scrum.domain.project.Release;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+
+import main.java.org.scrum.domain.project.Release;
 
 @Component("ProjectEntityFactoryBaseCDI")
 @Scope("singleton") 	//@Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)

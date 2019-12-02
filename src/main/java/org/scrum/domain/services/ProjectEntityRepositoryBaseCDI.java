@@ -9,9 +9,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
 import org.scrum.domain.project.Project;
-import org.scrum.domain.project.Release;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+
+import main.java.org.scrum.domain.project.Release;
 
 //SDI Bean Component 
 @Component
