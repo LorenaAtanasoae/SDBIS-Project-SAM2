@@ -114,4 +114,5 @@ public class Release implements Serializable{
 	}
 	public void addFeature(String feature) {
 		this.features.add(new Feature(null, feature));
-	}	
+	}
+}
