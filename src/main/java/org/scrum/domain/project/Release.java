@@ -1,4 +1,4 @@
-package main.java.org.scrum.domain.project;
+package org.scrum.domain.project;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -90,14 +90,6 @@ public class Release implements Serializable{
 		this.project = project;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result
-				+ ((releaseId == null) ? 0 : releaseId.hashCode());
-		return result;
-	}
 
 	@Override
 	public boolean equals(Object obj) {
@@ -123,4 +115,3 @@ public class Release implements Serializable{
 	public void addFeature(String feature) {
 		this.features.add(new Feature(null, feature));
 	}	
-}
