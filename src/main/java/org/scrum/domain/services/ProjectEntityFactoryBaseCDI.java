@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import main.java.org.scrum.domain.project.Release;
+import org.scrum.domain.project.Release;
 
 @Component("ProjectEntityFactoryBaseCDI")
 @Scope("singleton") 	//@Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)

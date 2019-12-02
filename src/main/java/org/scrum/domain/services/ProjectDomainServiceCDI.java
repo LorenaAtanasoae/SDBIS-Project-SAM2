@@ -8,7 +8,7 @@ import org.scrum.domain.project.Project;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import main.java.org.scrum.domain.project.Release;
+import org.scrum.domain.project.Release;
 
 // SDI Bean Component  
 @Component

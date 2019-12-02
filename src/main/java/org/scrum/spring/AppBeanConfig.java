@@ -1,12 +1,12 @@
-package main.java.org.scrum.spring;
-import main.java.org.scrum.domain.services.IProjectDomainService;
-import main.java.org.scrum.domain.services.IProjectEntityFactory;
-import main.java.org.scrum.domain.services.IProjectEntityRepository;
-import main.java.org.scrum.domain.services.ProjectDomainServiceCDI;
-import main.java.org.scrum.domain.services.ProjectEntityFactoryBaseCDI;
-import main.java.org.scrum.domain.services.ProjectEntityRepositoryBaseCDI;
-import main.java.org.springframework.context.annotation.Bean;
-import main.java.org.springframework.context.annotation.Configuration;
+package org.scrum.spring;
+import org.scrum.domain.services.IProjectDomainService;
+import org.scrum.domain.services.IProjectEntityFactory;
+import org.scrum.domain.services.IProjectEntityRepository;
+import org.scrum.domain.services.ProjectDomainServiceCDI;
+import org.scrum.domain.services.ProjectEntityFactoryBaseCDI;
+import org.scrum.domain.services.ProjectEntityRepositoryBaseCDI;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class AppBeanConfig {
