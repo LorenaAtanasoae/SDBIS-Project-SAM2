@@ -4,23 +4,30 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
+@Entity
 public class Team implements Serializable{
+	@Id
 	private Integer teamID;
 	
 	private Specialization specialization;
 	private String abilities;
 	
+	@OneToMany
 	private List<Member> members = new ArrayList<Member>();
 	
+	@OneToOne
 	private TeamLeader teamLeader;
-
 	
-	public Team(Integer teamId, Specialization specialization, String abilities) {
+	public Team(Integer idEchipa, Specialization specializare, String competente) {
 		super();
-		this.teamID = teamId;
-		this.specialization = specialization;
-		this.abilities = abilities;
+		this.teamID = idEchipa;
+		this.specialization = specializare;
+		this.abilities = competente;
 	}
 	public Integer getTeamID() {
 		return teamID;
@@ -60,7 +67,7 @@ public class Team implements Serializable{
 		this.teamID = teamID;
 		this.specialization = specialization;
 	}
-	
+	// polimorfism parametrizare
 	public void addMember(Member member){
 		this.members.add(member);
 	}
@@ -69,5 +76,4 @@ public class Team implements Serializable{
 		BACKEND, FRONTEND, DATABASE;
 	}	
 }
-
 
