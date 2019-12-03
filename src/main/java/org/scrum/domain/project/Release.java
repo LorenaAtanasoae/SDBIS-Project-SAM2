@@ -5,16 +5,21 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@Entity
 public class Release implements Serializable{
+	@Id @GeneratedValue
 	private Integer releaseId;
 	private String codeName;
 	private String indicative;
 	private String description;
 	
+	@Temporal(TemporalType.DATE)
 	private Date publishDate;
 	
+	@ManyToOne
 	private Project project;
 
+	@OneToMany(cascade = ALL)
 	private List<Feature> features = new ArrayList<>();
 	
 	public Integer getReleaseId() {
