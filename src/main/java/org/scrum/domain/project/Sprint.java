@@ -5,13 +5,22 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 public class Sprint implements Serializable{
 	
+	@Id
 	private Integer sprintID;
 	private String objective;
 	
+	@OneToMany
 	private List<Feature> features = new ArrayList<>();
 	
+	@Temporal(TemporalType.DATE)
 	private Date startDate;
 	private String review;
 	
