@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class Member 
 	implements Comparable<Member>, Serializable{
 	
+	@Id @GeneratedValue
 	private Integer memberID;
 	
 	private String name;
