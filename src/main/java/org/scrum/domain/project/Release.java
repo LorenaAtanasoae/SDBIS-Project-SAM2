@@ -33,7 +33,7 @@ public class Release implements Serializable{
 	@OneToOne
 	private Project project;
 
-	@OneToMany(cascade = ALL)
+	@OneToMany
 	private List<Feature> features = new ArrayList<>();
 	
 	public Integer getReleaseId() {
