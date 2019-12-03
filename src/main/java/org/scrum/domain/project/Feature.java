@@ -2,13 +2,22 @@
 package org.scrum.domain.project;
 
 import java.util.List;
+
+
+import org.scrum.domain.project.Task;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import javax.persistence.*;
+
 //Comment
+@Entity
 public class Feature implements Comparable<Feature>, Serializable
 {
+	@Id
 	protected Integer featureID;
+	
 	private String name;
 	private String description;
 	private List<Task> tasks= new ArrayList<>();
