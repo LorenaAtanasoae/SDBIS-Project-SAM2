@@ -6,19 +6,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.io.Serializable;
 
-<<<<<<< HEAD
 import javax.persistence.*;
+
 @Entity
 @Table(name = "Members")
 public class Member implements Comparable<Member>, Serializable{
-	@Id @GeneratedValue
-	@Column(name = "MemberID")
-=======
-public class Member 
-	implements Comparable<Member>, Serializable{
 	
 	@Id @GeneratedValue
->>>>>>> 07947fe83a17448723eb11eb9ee8e76cfbed1ffa
+	@Column(name = "MemberID")
 	private Integer memberID;
 	
 	@Column(name = "Name")
