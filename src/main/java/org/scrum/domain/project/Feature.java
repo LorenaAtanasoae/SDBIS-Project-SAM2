@@ -11,16 +11,24 @@ import java.util.ArrayList;
 
 import javax.persistence.*;
 
+
 //Comment
 @Entity
+@Table(name = "Features")
 public class Feature implements Comparable<Feature>, Serializable
 {
-	@Id
+	@Id @GeneratedValue
+	@Column(name = "ID")
 	protected Integer featureID;
-	
+	@Column(name = "Name")
 	private String name;
+	@Column(name = "Description")
 	private String description;
+	@OneToMany
 	private List<Task> tasks= new ArrayList<>();
+	
+	@ManyToOne
+	private Sprint sprint;
 	
 	protected FeatureCategory category = FeatureCategory.TECHNICAL;
 	

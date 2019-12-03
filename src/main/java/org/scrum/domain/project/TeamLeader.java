@@ -1,36 +1,56 @@
 package org.scrum.domain.project;
 
+import javax.persistence.*;
+
+@Entity
 public class TeamLeader extends Member{
 	
-		private String TechnicalAbilities; 
+		@Column(name = "TechnicalAbilitites")
+		@Enumerated(EnumType.STRING)
+		private AbilityType Ability; 
 		
-		public String getTechnicalAbilities() {
-			return TechnicalAbilities;
+		
+		public AbilityType getAbility() {
+			return Ability;
 		}
-		public void setTechnicalAbilities(String TechnicalAbilities) {
-			this.TechnicalAbilities = TechnicalAbilities;
+
+
+		public void setAbility(AbilityType ability) {
+			Ability = ability;
 		}
-		public TeamLeader(Integer id, String name,
-				String TechnicalAbilities) {
-			super(id, name, Role.MANAGER);
-			this.TechnicalAbilities = TechnicalAbilities;
+
+		
+		public TeamLeader(AbilityType ability) {
+			super();
+			Ability = ability;
 		}
+
+		
+
 		public TeamLeader() {
 			super();
+			// TODO Auto-generated constructor stub
 		}
-		
-		@Override
-		public void setAbilities(String abilities) {
-			this.setTechnicalAbilities(abilities);
-		}	
 
-		public void setAbilities(String abilities, AbilityType type) {
-			if (type.equals(AbilityType.MANAGERIAL))
-				super.setAbilities(abilities);
-			
-			if (type.equals(AbilityType.TECHNOLOGICAL))
-				setTechnicalAbilities(abilities);
-			
+
+		public TeamLeader(Integer memberID, String name, Role role) {
+			super(memberID, name, role);
+			// TODO Auto-generated constructor stub
 		}
+
+
+		public TeamLeader(Integer memberID, String name, String userName, String password) {
+			super(memberID, name, userName, password);
+			// TODO Auto-generated constructor stub
+		}
+
+
+		public TeamLeader(Integer memberID, String name) {
+			super(memberID, name);
+			// TODO Auto-generated constructor stub
+		}
+
+
+
 		public enum AbilityType {MANAGERIAL, TECHNOLOGICAL}
 }

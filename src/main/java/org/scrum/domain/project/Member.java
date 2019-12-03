@@ -2,16 +2,29 @@ package org.scrum.domain.project;
 
 import java.io.Serializable;
 
-public class Member 
-	implements Comparable<Member>, Serializable{
-	
+import javax.persistence.*;
+@Entity
+@Table(name = "Members")
+public class Member implements Comparable<Member>, Serializable{
+	@Id @GeneratedValue
+	@Column(name = "MemberID")
 	private Integer memberID;
 	
+	@Column(name = "Name")
 	private String name;
+	
+	@Column(name = "Role")
+	@Enumerated(EnumType.STRING)
 	private Role role;
 	
+	@Column(name = "UserName")
 	private String userName;
+	
+	@Column(name = "Password")
 	private String password;
+	
+	@ManyToOne
+	private Team team;
 		
 	public String getUserName() {
 		return userName;
@@ -81,7 +94,7 @@ public class Member
 	public enum Role{
 		MANAGER, PRODUCT_OWNER, SCRUM_MASTER, DEVELOPER, ANALYST, TESTER;
 	}
-
+	
 	@Override
 	public int compareTo(Member o) {
 		// TODO Auto-generated method stub

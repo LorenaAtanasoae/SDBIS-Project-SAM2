@@ -7,15 +7,35 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.*;
+@Entity
+@Table(name = "Projects")
 public class Project implements Serializable, Comparable<Project>{
-
+	@Id @GeneratedValue
+	@Column(name = "ProjectNo")
 	private Integer projectNo;
+	
+	@Column(name = "Name")
 	private String name;
+	
+	@Temporal(TemporalType.DATE)
 	private Date startDate;
-	private List<Release> releases = new ArrayList<>();
+	
+	@Column(name = "CurrentRelease")
+	@OneToOne
 	private Release currentRelease;
+	
+	public List<Release> getReleases() {
+		return releases;
+	}
+	public void setReleases(List<Release> releases) {
+		this.releases = releases;
+	}
+	@OneToMany
 	private List<Team> teams = new ArrayList<>();
 	
+	@OneToMany
+	private List<Release> releases = new ArrayList<>();
 
 	public List<Team> getTeams() {
 		return teams;
@@ -43,13 +63,6 @@ public class Project implements Serializable, Comparable<Project>{
 	public void setStartDate(Date startName) {
 		this.startDate = startName;
 	}
-
-	public List<Release> getReleases() {
-		return releases;
-	}
-	public void setReleases(List<Release> releases) {
-		this.releases = releases;
-	}
 	public Release getCurrentRelease() {
 		return currentRelease;
 	}
@@ -59,8 +72,7 @@ public class Project implements Serializable, Comparable<Project>{
 	
 	@Override
 	public String toString() {
-		return "\nProject [projectNo=" + projectNo + ", name=" + name + ", startDate=" + startDate + ", releases="
-				+ releases + "]";
+		return "\nProject [projectNo=" + projectNo + ", name=" + name + ", startDate=" + startDate +  "]";
 	}
 	
 	public Project(Integer projectNo, String name, Date startDate) {
@@ -74,12 +86,15 @@ public class Project implements Serializable, Comparable<Project>{
 	}
 
 
-	public Project(Integer projectNo, String name, Date startDate, List<Team> teams) {
+	public Project(Integer projectNo, String name, Date startDate, Release currentRelease, List<Team> teams,
+			List<Release> releases) {
 		super();
 		this.projectNo = projectNo;
 		this.name = name;
 		this.startDate = startDate;
+		this.currentRelease = currentRelease;
 		this.teams = teams;
+		this.releases = releases;
 	}
 	public Project(Integer nrProiect, String numeProiect) {
 		super();
@@ -91,5 +106,6 @@ public class Project implements Serializable, Comparable<Project>{
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	
 	
 }

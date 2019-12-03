@@ -5,13 +5,23 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Sprints")
 public class Sprint implements Serializable{
-	
+	@Id @GeneratedValue
+	@Column(name = "SprintID")
 	private Integer sprintID;
+	
+	
+	@Column(name = "Objective")
 	private String objective;
 	
+	@OneToMany(mappedBy="sprint", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
 	private List<Feature> features = new ArrayList<>();
 	
+	@Temporal(TemporalType.DATE)
 	private Date startDate;
 	private String review;
 	

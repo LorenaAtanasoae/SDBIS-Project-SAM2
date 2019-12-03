@@ -5,16 +5,31 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.*;
+@Entity
+@Table(name = "Releases")
 public class Release implements Serializable{
+	@Id @GeneratedValue
+	@Column(name = "ReleaseID")
 	private Integer releaseId;
+	
+	@Column(name = "CodeName")
 	private String codeName;
+	
+	@Column(name = "Indicative")
 	private String indicative;
+	
+	@Column(name = "Description")
 	private String description;
 	
+	@Temporal(TemporalType.DATE)
 	private Date publishDate;
 	
+	@Column(name = "ProjectNo")
+	@OneToOne
 	private Project project;
-
+	
+	@OneToMany
 	private List<Feature> features = new ArrayList<>();
 	
 	public Integer getReleaseId() {

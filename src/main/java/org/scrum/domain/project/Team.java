@@ -4,15 +4,31 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.*;
 
+@Entity
+@Table(name = "Teams")
 public class Team implements Serializable{
+	@Id @GeneratedValue
+	@Column(name = "TeamID")
 	private Integer teamID;
 	
+	@Column(name = "Specialization")
+	@Enumerated(EnumType.STRING)
 	private Specialization specialization;
+	
+	@Column(name = "Abilities")
 	private String abilities;
 	
+	@OneToMany(mappedBy="team", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
 	private List<Member> members = new ArrayList<Member>();
 	
+	@OneToMany
+	@Column(name = "Project")
+	private Project project;
+	
+	@OneToOne
+	@Column(name = "TeamLeader")
 	private TeamLeader teamLeader;
 
 	
