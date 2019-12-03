@@ -5,11 +5,25 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+<<<<<<< HEAD
 import javax.persistence.*;
 
 @Entity
 @Table(name = "Tasks")
 public class Task implements Serializable{
+=======
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+
+	public class Task implements Serializable{
+
+>>>>>>> 07947fe83a17448723eb11eb9ee8e76cfbed1ffa
 		@Id @GeneratedValue
 		private Integer taskID;
 		
@@ -22,6 +36,7 @@ public class Task implements Serializable{
 		@Temporal(TemporalType.DATE)
 		private Date startDate;
 		
+<<<<<<< HEAD
 		@Temporal(TemporalType.DATE)
 		private Date estimatedTime; 
 		
@@ -42,7 +57,21 @@ public class Task implements Serializable{
 		@Column(name = "TaskStatus")
 		@Enumerated(EnumType.STRING)
 		private TaskStatus taskStatus;
+=======
+		private Integer estimatedTime; 
+		private Integer remainingTime; 
+		private Integer realTime;	
 
+		@ManyToOne
+		private Member responsible;
+		
+	        private TaskCategory taskCategory;
+>>>>>>> 07947fe83a17448723eb11eb9ee8e76cfbed1ffa
+
+		// Burn down
+		@Transient
+		private Map<Date, Integer> burnDownRecords = new HashMap<>();
+	
 		public Integer getTaskID() {
 			return taskID;
 		}

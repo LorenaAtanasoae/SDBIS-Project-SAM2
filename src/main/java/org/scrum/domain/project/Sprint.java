@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+<<<<<<< HEAD
 import javax.persistence.*;
 
 @Entity
@@ -12,13 +13,28 @@ import javax.persistence.*;
 public class Sprint implements Serializable{
 	@Id @GeneratedValue
 	@Column(name = "SprintID")
+=======
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+public class Sprint implements Serializable{
+	
+	@Id
+>>>>>>> 07947fe83a17448723eb11eb9ee8e76cfbed1ffa
 	private Integer sprintID;
 	
 	
 	@Column(name = "Objective")
 	private String objective;
 	
+<<<<<<< HEAD
 	@OneToMany(mappedBy="sprint", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+=======
+	@OneToMany
+>>>>>>> 07947fe83a17448723eb11eb9ee8e76cfbed1ffa
 	private List<Feature> features = new ArrayList<>();
 	
 	@Temporal(TemporalType.DATE)

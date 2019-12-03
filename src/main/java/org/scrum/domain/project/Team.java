@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+<<<<<<< HEAD
 import javax.persistence.*;
 
 @Entity
@@ -11,6 +12,16 @@ import javax.persistence.*;
 public class Team implements Serializable{
 	@Id @GeneratedValue
 	@Column(name = "TeamID")
+=======
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
+@Entity
+public class Team implements Serializable{
+	@Id
+>>>>>>> 07947fe83a17448723eb11eb9ee8e76cfbed1ffa
 	private Integer teamID;
 	
 	@Column(name = "Specialization")
@@ -20,6 +31,7 @@ public class Team implements Serializable{
 	@Column(name = "Abilities")
 	private String abilities;
 	
+<<<<<<< HEAD
 	@OneToMany(mappedBy="team", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
 	private List<Member> members = new ArrayList<Member>();
 	
@@ -29,14 +41,19 @@ public class Team implements Serializable{
 	
 	@OneToOne
 	@Column(name = "TeamLeader")
-	private TeamLeader teamLeader;
-
+=======
+	@OneToMany
+	private List<Member> members = new ArrayList<Member>();
 	
-	public Team(Integer teamId, Specialization specialization, String abilities) {
+	@OneToOne
+>>>>>>> 07947fe83a17448723eb11eb9ee8e76cfbed1ffa
+	private TeamLeader teamLeader;
+	
+	public Team(Integer idEchipa, Specialization specializare, String competente) {
 		super();
-		this.teamID = teamId;
-		this.specialization = specialization;
-		this.abilities = abilities;
+		this.teamID = idEchipa;
+		this.specialization = specializare;
+		this.abilities = competente;
 	}
 	public Integer getTeamID() {
 		return teamID;
@@ -76,7 +93,7 @@ public class Team implements Serializable{
 		this.teamID = teamID;
 		this.specialization = specialization;
 	}
-	
+	// polimorfism parametrizare
 	public void addMember(Member member){
 		this.members.add(member);
 	}
@@ -85,5 +102,4 @@ public class Team implements Serializable{
 		BACKEND, FRONTEND, DATABASE;
 	}	
 }
-
 
