@@ -5,20 +5,38 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+
 	public class Task implements Serializable{
 
+		@Id @GeneratedValue
 		private Integer taskID;
 		private String name;
 		private String description;
-
+		
+		@Temporal(TemporalType.DATE)
 		private Date startDate;
 		
 		private Integer estimatedTime; 
 		private Integer remainingTime; 
 		private Integer realTime;	
 
+		@ManyToOne
 		private Member responsible;
+		
+	        private TaskCategory taskCategory;
 
+		// Burn down
+		@Transient
+		private Map<Date, Integer> burnDownRecords = new HashMap<>();
+	
 		public Integer getTaskID() {
 			return taskID;
 		}
